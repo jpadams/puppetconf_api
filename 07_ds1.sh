@@ -1,3 +1,5 @@
+# ./07_ds1.sh > ds.json
+
 curl -X GET \
 --cert   `puppet config print hostcert` \
 --key    `puppet config print hostprivkey` \
