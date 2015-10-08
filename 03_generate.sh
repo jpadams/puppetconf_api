@@ -1,0 +1,1 @@
+puppet cert generate lizzi
