@@ -28,7 +28,7 @@ curl -X GET \
 --cacert `puppet config print localcacert` \
 https://learning.puppetlabs.vm:8140/puppet-ca/v1/certificate_status/example1?environment=production
 
-echo
+echo; echo
 
 # clean up
 puppet cert clean example1
