@@ -14,6 +14,7 @@ pip install httpie
 pip install requests
 ```
 
+###If you are going to try to manage the CA API for cert signing from a machine other than the master:
 **Warning**: If you are running PE 2015.2 or 2015.2.1, you will need to fix a
 `puppet_enterprise` profile class before you can manage the `client_whitelist`.
 This only affects the Puppet Server's CA whitelist, not PuppetDB or Console.
