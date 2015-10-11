@@ -3,7 +3,7 @@
 These examples were done on the Learning VM that you can find at <http://learn.puppetlabs.com>.
 
 If you want to set up your Learning VM to be able to hit the Console Services
-'status' API via HTTP like I do in my first example, see the docs here:
+'status' API via HTTP on port 8123 like I do in my first example, see the docs here:
 <https://docs.puppetlabs.com/pe/latest/status_api.html#authenticating-requests>
 
 
