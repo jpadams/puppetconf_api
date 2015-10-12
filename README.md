@@ -1,5 +1,8 @@
 # puppetconf_api
 
+The presentation we used is available on SlideShare at
+<http://www.slideshare.net/JeremyAdams2/puppetconf-2015-puppet-api-roundup>
+
 These examples were done on the Learning VM that you can find at <http://learn.puppetlabs.com>.
 
 If you want to set up your Learning VM to be able to hit the Console Services
