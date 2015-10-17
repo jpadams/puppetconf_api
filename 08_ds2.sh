@@ -1,4 +1,5 @@
 curl -X PUT -H 'Content-Type: application/json' \
+--tlsv1 \
 --data @ds.json \
 --cert   $(puppet config print hostcert) \
 --key    $(puppet config print hostprivkey) \

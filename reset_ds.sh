@@ -26,7 +26,8 @@ curl -X PUT -H 'Content-Type: application/json' \
     "user_lookup_attr": "cn",
     "user_rdn": "ou=users"
 }' \
---cert   `puppet config print hostcert` \
---key    `puppet config print hostprivkey` \
---cacert `puppet config print localcacert` \
+--tlsv1 \
+--cert   $(puppet config print hostcert) \
+--key    $(puppet config print hostprivkey) \
+--cacert $(puppet config print localcacert) \
 https://learning.puppetlabs.vm:4433/rbac-api/v1/ds | python -m json.tool

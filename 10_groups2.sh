@@ -1,6 +1,7 @@
 # This one won't work at all w/o content type header
 
 curl -X POST -H "Content-type: application/json" \
+--tlsv1 \
 --data @groups.json \
 --cert   $(puppet config print hostcert) \
 --key    $(puppet config print hostprivkey) \

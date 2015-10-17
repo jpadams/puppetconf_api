@@ -6,6 +6,7 @@
 # currently API-only features!
 
 curl -X POST -H "Content-type: application/json" \
+--tlsv1 \
 --dump-header - \
 --location \
 --data \

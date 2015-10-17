@@ -32,17 +32,17 @@ curl -s -D - -X GET http://localhost:8123/status/v1/services --data 'level=debug
 # were also put into the cert.
 
 curl -X GET \
---cert   `puppet config print hostcert` \
---key    `puppet config print hostprivkey` \
---cacert `puppet config print localcacert` \
+--cert   $(puppet config print hostcert) \
+--key    $(puppet config print hostprivkey) \
+--cacert $(puppet config print localcacert) \
 https://localhost:4433/status/v1/services
 
-# openssl x509 -in `puppet config print hostcert` -inform pem -text | grep learning
+# openssl x509 -in $(puppet config print hostcert) -inform pem -text | grep learning
 
 curl -X GET \
---cert   `puppet config print hostcert` \
---key    `puppet config print hostprivkey` \
---cacert `puppet config print localcacert` \
+--cert   $(puppet config print hostcert) \
+--key    $(puppet config print hostprivkey) \
+--cacert $(puppet config print localcacert) \
 https://learning.puppetlabs.vm:4433/status/v1/services
 
 curl -X GET \
@@ -60,24 +60,24 @@ https://learning.puppetlabs.vm:4433/status/v1/services
 # (these examples will work if learning.puppetlabs.vm has been added to the CA's client_whitelist in the console)
 
 curl -X GET \
---cert   `puppet config print hostcert` \
---key    `puppet config print hostprivkey` \
---cacert `puppet config print localcacert` \
+--cert   $(puppet config print hostcert) \
+--key    $(puppet config print hostprivkey) \
+--cacert $(puppet config print localcacert) \
 https://learning.puppetlabs.vm:8140/puppet-ca/v1/certificate_status/learning.puppetlabs.vm?environment=production
 
 ## WGET 
 wget \
 --quiet \
 --output-document=- \
---certificate=`puppet config print hostcert` \
---private-key=`puppet config print hostprivkey` \
---ca-certificate=`puppet config print localcacert` \
+--certificate=$(puppet config print hostcert) \
+--private-key=$(puppet config print hostprivkey) \
+--ca-certificate=$(puppet config print localcacert) \
 https://learning.puppetlabs.vm:8140/puppet-ca/v1/certificate_status/learning.puppetlabs.vm?environment=production
 
 ## HTTPIE
 http \
 --body \
---cert=`puppet config print hostcert` \
---cert-key=`puppet config print hostprivkey` \
---verify=`puppet config print localcacert` \
+--cert=$(puppet config print hostcert) \
+--cert-key=$(puppet config print hostprivkey) \
+--verify=$(puppet config print localcacert) \
 https://learning.puppetlabs.vm:8140/puppet-ca/v1/certificate_status/learning.puppetlabs.vm?environment=production
