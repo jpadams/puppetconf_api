@@ -1,5 +1,15 @@
 # puppetconf_api
 
+Recent changes:
+I changed the examples to use $(puppet config print hostcert) instead of \`puppet config print hostcert\` for [command substitution](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/V3_chap02.html#tag_18_06_03) since that syntax works on Windows as well as *nix.
+
+I also added "--tlsv1" to all of the `curl` commands because I realized that some people's `curl` might be trying to use SSLv2 or SSLv3 which are disabled in Puppet Server because of vulnerabilities like POODLE. This forces `curl` to use a protocol in the TLS 1.x family. PE 2015.2.x uses TLS 1.2 by default. You can check this out with `curl` by trying to use a different explicit protocol like "--sslv3" with the "-v" verbose option and watching it fail. You can also use these fun `openssl` commands:
+
+```
+openssl s_client -ssl3 -connect learning.puppetlabs.vm:8140
+openssl s_client -tls1 -connect learning.puppetlabs.vm:8140
+```
+
 The presentation we used is available on SlideShare at
 <http://www.slideshare.net/JeremyAdams2/puppetconf-2015-puppet-api-roundup>
 
