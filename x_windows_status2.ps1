@@ -13,4 +13,4 @@
 --cert "$(puppet config print hostcert)" `
 --key "$(puppet config print hostprivkey)" `
 --cacert "$(puppet config print localcacert)" `
-https://master.inf.puppetlabs.demo:4433/status/v1/services | ConvertFrom-Json | ConvertTo-Json
+https://learning.puppetlabs.vm:4433/status/v1/services | ConvertFrom-Json | ConvertTo-Json
