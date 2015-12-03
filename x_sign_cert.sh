@@ -7,7 +7,7 @@ curl -X GET \
 --cert   $(puppet config print hostcert) \
 --key    $(puppet config print hostprivkey) \
 --cacert $(puppet config print localcacert) \
-https://learning.puppetlabs.vm:8140/puppet-ca/v1/certificate_status/example1?environment=production
+https://$(puppet config print server):8140/puppet-ca/v1/certificate_status/example1?environment=production
 
 echo
 
@@ -19,7 +19,7 @@ curl -X PUT -H 'Content-Type: application/json' \
 --cert   $(puppet config print hostcert) \
 --key    $(puppet config print hostprivkey) \
 --cacert $(puppet config print localcacert) \
-https://learning.puppetlabs.vm:8140/puppet-ca/v1/certificate_status/example1?environment=production
+https://$(puppet config print server):8140/puppet-ca/v1/certificate_status/example1?environment=production
 
 echo
 
@@ -29,7 +29,7 @@ curl -X GET \
 --cert   $(puppet config print hostcert) \
 --key    $(puppet config print hostprivkey) \
 --cacert $(puppet config print localcacert) \
-https://learning.puppetlabs.vm:8140/puppet-ca/v1/certificate_status/example1?environment=production
+https://$(puppet config print server):8140/puppet-ca/v1/certificate_status/example1?environment=production
 
 echo; echo
 

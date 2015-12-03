@@ -57,7 +57,7 @@ https://learning.puppetlabs.vm:4433/status/v1/services
 # httpie in your scripts, but you may also use a python or ruby library, or a GUI tool like postman. Here I'll
 # show a couple of examples using other tools. It should be clear that the basic idea is the same, once you know the basics
 # of VERB, URL, DATA, and AUTH.
-# (these examples will work if learning.puppetlabs.vm has been added to the CA's client_whitelist in the console)
+# (these examples will work if $(puppet config print server) has been added to the CA's client_whitelist in the console)
 
 curl -X GET \
 --cert   $(puppet config print hostcert) \

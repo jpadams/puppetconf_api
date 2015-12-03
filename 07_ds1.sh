@@ -5,7 +5,7 @@ curl -X GET \
 --cert   $(puppet config print hostcert) \
 --key    $(puppet config print hostprivkey) \
 --cacert $(puppet config print localcacert) \
-https://learning.puppetlabs.vm:4433/rbac-api/v1/ds | python -m json.tool
+ https://$(puppet config print server):4433/rbac-api/v1/ds | python -m json.tool
 
 # This backticks syntax also works on *nix.
 # Run the `puppet config print` commands on the
@@ -15,4 +15,4 @@ https://learning.puppetlabs.vm:4433/rbac-api/v1/ds | python -m json.tool
 #--cert   `puppet config print hostcert` \
 #--key    `puppet config print hostprivkey` \
 #--cacert `puppet config print localcacert` \
-#https://learning.puppetlabs.vm:4433/rbac-api/v1/ds | python -m json.tool
+#https://$(puppet config print server):4433/rbac-api/v1/ds | python -m json.tool

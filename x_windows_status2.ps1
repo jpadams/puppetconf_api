@@ -10,7 +10,7 @@
 # If you don't like progress meter you can use --silent, but errors will be hidden.
  
 & curl.exe -X GET `
---cert "$(puppet config print hostcert)" `
---key "$(puppet config print hostprivkey)" `
---cacert "$(puppet config print localcacert)" `
-https://learning.puppetlabs.vm:4433/status/v1/services | ConvertFrom-Json | ConvertTo-Json
+--cert   $(puppet config print hostcert) `
+--key    $(puppet config print hostprivkey) `
+--cacert $(puppet config print localcacert) `
+ https://$(puppet config print server):4433/status/v1/services | ConvertFrom-Json | ConvertTo-Json

@@ -14,7 +14,7 @@ curl -X PUT -H 'Content-Type: application/json' \
     "group_object_class": "*",
     "group_rdn": "ou=groups",
     "help_link": "",
-    "hostname": "learning.puppetlabs.vm",
+    "hostname": "my.ldap.com",
     "login": "uid=admin,ou=system",
     "password": "secret",
     "port": 10389,
@@ -30,4 +30,4 @@ curl -X PUT -H 'Content-Type: application/json' \
 --cert   $(puppet config print hostcert) \
 --key    $(puppet config print hostprivkey) \
 --cacert $(puppet config print localcacert) \
-https://learning.puppetlabs.vm:4433/rbac-api/v1/ds | python -m json.tool
+ https://$(puppet config print server):4433/rbac-api/v1/ds | python -m json.tool
