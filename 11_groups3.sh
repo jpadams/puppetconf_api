@@ -6,7 +6,6 @@
 # currently API-only features!
 
 curl -X POST -H "Content-type: application/json" \
---tlsv1 \
 --dump-header - \
 --location \
 --data \
@@ -18,14 +17,10 @@ curl -X POST -H "Content-type: application/json" \
     "parent": "00000000-0000-4000-8000-000000000000",
     "rule": [
       "and",
-        [ "=",
-          [ "trusted", "extensions", "pp_role" ],
-          "tomcat"
-        ],
-        [ "=",
-          [ "fact", "os", "family" ],
-          "RedHat"
-        ]
+      [ "=",
+        [ "trusted", "extensions", "pp_role" ],
+        "role::linux_app"
+      ]
     ],
     "variables": {}
 }' \
